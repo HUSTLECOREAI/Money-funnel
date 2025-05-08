@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The $97 Method That Changed Everything</title>
+  <style>
+    body {
+      background: #111;
+      color: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 { font-size: 2.5rem; color: #ff4747; }
+    .timer { font-size: 1.5rem; margin: 1rem 0; }
+    .testimonial {
+      background: #222;
+      margin: 1rem auto;
+      padding: 1rem;
+      border: 1px solid #333;
+      max-width: 600px;
+    }
+    button {
+      background: #ff4747;
+      color: #fff;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 2rem;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      color: white;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Only 17 Copies Left — Then It’s Gone Forever</h1>
+  <div class="timer" id="timer">Time left: 14:59</div>
+
+  <p>Grab the exact method I used to make $5,230 in one week.</p>
+  <p>No ads. No followers. Just copy-paste execution.</p>
+
+  <div class="testimonial">
+    “Didn’t expect shit… but I made $1.2K in 3 days. This is insane.” – Jeremy B.
+  </div>
+  <div class="testimonial">
+    “Best $97 I ever spent. I was broke AF. Now I’m finally ahead.” – Dana K.
+  </div>
+  <div class="testimonial">
+    “I’ve bought dozens of courses. This one actually worked.” – Kris M.
+  </div>
+
+  <a href="optin.html">
+    <button>Get Instant Access — $97</button>
+  </a>
+
+  <div class="popup" id="exitPopup">
+    <h2>WAIT! Before You Go...</h2>
+    <p>This offer disappears when you leave. Don’t miss your shot.</p>
+    <a href="optin.html">
+      <button>Yes, Give Me Access</button>
+    </a>
+  </div>
+
+  <script>
+    // Countdown Timer
+    let minutes = 14;
+    let seconds = 59;
+    const timer = document.getElementById('timer');
+
+    setInterval(() => {
+      if (seconds === 0) {
+        if (minutes === 0) {
+          minutes = 14;
+          seconds = 59;
+        } else {
+          minutes--;
+          seconds = 59;
+        }
+      } else {
+        seconds--;
+      }
+      timer.textContent = `Time left: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+    }, 1000);
+
+    // Exit Intent Popup
+    document.addEventListener("mouseout", function(e){
+      if(e.clientY < 50){
+        document.getElementById("exitPopup").style.display = "flex";
+      }
+    });
+  </script>
+</body>
+</html>
