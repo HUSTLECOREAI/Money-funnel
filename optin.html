@@ -6,8 +6,27 @@
   <title>Get Rich in 1 Click</title>
 
   <!-- Brevo Fonts + Styles -->
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
   <style>
+    @font-face {
+      font-display: block;
+      font-family: Roboto;
+      src: url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/7529907e9eaf8ebb5220c5f9850e3811.woff2) format("woff2"),
+           url(https://assets.brevo.com/font/Roboto/Latin/normal/normal/25c678feafdc175a70922a116c9be3e7.woff) format("woff");
+    }
+    @font-face {
+      font-display: fallback;
+      font-family: Roboto;
+      font-weight: 600;
+      src: url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/6e9caeeafb1f3491be3e32744bc30440.woff2) format("woff2"),
+           url(https://assets.brevo.com/font/Roboto/Latin/medium/normal/71501f0d8d5aa95960f6475d5487d4c2.woff) format("woff");
+    }
+    @font-face {
+      font-display: fallback;
+      font-family: Roboto;
+      font-weight: 700;
+      src: url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/3ef7cf158f310cf752d5ad08cd0e7e60.woff2) format("woff2"),
+           url(https://assets.brevo.com/font/Roboto/Latin/bold/normal/ece3a1d82f18b60bcce0211725c476aa.woff) format("woff");
+    }
     body {
       background-color: #111;
       color: #fff;
@@ -19,49 +38,65 @@
       font-size: 2rem;
       color: #ff4747;
     }
-    .sib-container {
-      margin: 2rem auto;
+    #sib-container input::placeholder {
+      color: #c0ccda;
+    }
+    #sib-container {
+      margin-top: 2rem;
     }
   </style>
+  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css" />
 </head>
 <body>
 
   <h1>You're One Step Away From the £97 Method</h1>
   <p>Drop your email below and get instant access to what actually works.</p>
 
-  <!-- Brevo Form Embed with Redirect -->
+  <!-- Brevo Form Start -->
   <div class="sib-form" style="text-align: center; background-color: #EFF2F7;">
     <div id="sib-form-container" class="sib-form-container">
       <div id="sib-container" class="sib-container--large sib-container--vertical" 
-        style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; margin:auto;">
-
+           style="text-align:center; background-color:rgba(255,255,255,1); max-width:540px; margin:auto; border-radius:3px; border:1px solid #C0CCD9;">
         <form id="sib-form" method="POST"
-          action="https://sibforms.com/serve/MUIFAF47binTwmu3m-xDTnOvkvvKbtTO5pvCANnJ2oWn1WDVTaqfKMT1T-gCu2MULpg1vF6Y7WzAIiVTo8tFJPXOXZHq6GMGp9knp7BK8iN7vqIRK3ZhBu4lCHEd0QZuxDnwKzYzd5HhxKujDLL0fTaD3BnraLhE_tB-t3jmWl5MfHX4B4krcllTDReFB1BigUnYKsGJ3ZV11qER"
-          data-type="subscription"
-          onsubmit="setTimeout(function(){ window.location.href='https://jolly-biscuit-aef792.netlify.app/checkout.html'; }, 1500); return true;">
-
+          action="https://sibforms.com/serve/MUIFAIBzQebDm-TG0hdjI9hmGdumpjEofimR_t1QcQDQCSYt9bFK6CBRcw1THG4s4eQg9nKGrWHIHlyB_lniLu3lI_pp-x6dEPdVqpU0B31adRKYKUsYTb06QZfKZ2i0wMG-2zONR_zb1JY9uou9vTbTN72IDql4G5zL53BM0e2VkQYoKFmuW3GmEGYS2s22XW1--rKzCoc4AjuK"
+          data-type="subscription">
+          
           <div style="padding: 8px 0;">
-            <label for="EMAIL" style="font-weight:700;">Enter your email address to subscribe</label><br>
-            <input type="email" id="EMAIL" name="EMAIL" required placeholder="you@example.com"
-              style="padding:0.8rem; font-size:1rem; width:80%; max-width:400px;" />
-            <input type="hidden" name="sib_form_action" value="subscribe">
+            <label for="EMAIL" style="font-weight:700; color:#3c4858;">Enter your email address to subscribe</label><br>
+            <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="you@example.com"
+              required style="padding:0.8rem; font-size:1rem; width:80%; max-width:400px; margin-top:10px;" />
           </div>
 
           <div style="padding: 8px 0;">
-            <button type="submit"
-              style="padding:1rem 2rem; font-size:1.2rem; background:#ff4747; color:white; border:none; cursor:pointer;">
+            <button type="submit" style="padding:1rem 2rem; font-size:1.2rem; background:#ff4747; color:white; border:none; cursor:pointer;">
               Continue
             </button>
           </div>
 
           <input type="text" name="email_address_check" value="" class="input--hidden">
           <input type="hidden" name="locale" value="en">
-
         </form>
       </div>
     </div>
   </div>
+  <!-- Brevo Form End -->
 
+  <script>
+    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
+    window.LOCALE = 'en';
+    window.EMAIL_INVALID_MESSAGE = "Please enter a valid email.";
+    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
+    window.GENERIC_INVALID_MESSAGE = "Please enter a valid email.";
+    window.translation = {
+      common: {
+        selectedList: '{quantity} list selected',
+        selectedLists: '{quantity} lists selected',
+        selectedOption: '{quantity} selected',
+        selectedOptions: '{quantity} selected',
+      }
+    };
+    var AUTOHIDE = Boolean(0);
+  </script>
   <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
 </body>
